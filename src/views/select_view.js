@@ -15,6 +15,7 @@ SelectView.prototype.bindEvents = function () {
   this.container.addEventListener('change', (event) => {
     const selectedCountryIndex = event.target.value;
     PubSub.publish('Selectedcountry:index-loaded', selectedCountryIndex);
+    console.log('SelectView.addEventListener has selectedCountryIndex', selectedCountryIndex);
   });
 };
 
@@ -26,8 +27,7 @@ SelectView.prototype.populate = function (allCountriesData) {
     option.value = index;
     this.container.appendChild(option);
   })
-  // const arrayOfNames = allCountriesData.map(country => return country.name)//get an array of country names
-  // console.log('SelectView.populate has arrayOfNames:', arrayOfNames);
+
 };
 
 module.exports = SelectView;
