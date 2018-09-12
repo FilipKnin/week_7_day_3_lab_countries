@@ -3,8 +3,9 @@ const SelectView = require('./views/select_view.js');
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  const selectView = new SelectView();
-  selectView.bindEvents();
+  const selectElement = document.querySelector('select#countries')
+  const countryDropdown = new SelectView(selectElement);
+  countryDropdown.bindEvents();
 
   const country = new Country();
   country.getData();
